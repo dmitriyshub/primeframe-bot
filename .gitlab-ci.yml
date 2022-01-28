@@ -1,0 +1,12 @@
+stages:
+  - docker-build
+
+services:
+  - docker:19.03.12-dind
+docker-build:
+  stage: docker-build
+  image:
+    name: docker:19.03.12
+  script:
+    - |
+      docker ps
