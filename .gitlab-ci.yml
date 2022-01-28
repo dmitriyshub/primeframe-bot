@@ -9,4 +9,4 @@ docker-build:
     name: docker:19.03.12
   script:
     - |
-      docker ps
+      docker buld -it primeframe-bot .
