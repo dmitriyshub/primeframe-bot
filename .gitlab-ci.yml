@@ -9,5 +9,5 @@ docker-build:
     name: docker:19.03.12
   script:
     - |
-      docker login -u "${DOCKERHUB_USERNAME}" -p "${DOCKERHUB_PASSWORD}"
+      docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
       docker buIld -t primeframe-bot .
