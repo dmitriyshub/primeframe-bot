@@ -10,4 +10,4 @@ docker-build:
   script:
     - |
       docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-      docker buIld -t primeframe-bot .
+      docker build -t primeframe-bot .
