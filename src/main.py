@@ -19,20 +19,25 @@ def start(update: Update, context: CallbackContext) -> None:
         fr'Hi {user.mention_markdown_v2()}\!',
         reply_markup=ForceReply(selective=True),
     )
+    logging.info('Start for %s' % user.mention_markdown_v2())
 
 def help_command(update: Update, context: CallbackContext) -> None:
     """Send a message when the command /help is issued."""
+    user = update.effective_user
     update.message.reply_text('Help!')
+    logging.info('Echo for %s' % user.mention_markdown_v2())
 
 def echo(update: Update, context: CallbackContext) -> None:
     """Echo the user message."""
+    user = update.effective_user
     update.message.reply_text(update.message.text)
+    logging.info('Help for %s: %s' % (user.mention_markdown_v2(), update.message.text))
 
 def main() -> None:
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
     token = os.environ['TELEGRAM_TOKEN']
-    
+
     updater = Updater(token)
 
     # Get the dispatcher to register handlers
